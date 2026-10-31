@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Your Currency Convertor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+<body>
+    
+
+   
+<div class="currency-bg" id="currencyBg">
+<div class="golden-line line1"></div>
+<div class="golden-line line2"></div>
+<div class="golden-line line3"></div>
+<div class="golden-line line4"></div>
+<div class="golden-line line5"></div>
+<div class="golden-line line6"></div>
+
+</div>
+    <div class="container">
+        <h2><span class="currency-text">Currency</span> <span class="converter-text">Converter</span></h2>
+        <form>
+         <div class="amount">
+            <p>Enter Amount</p>
+            <input value="1" type="text"/>
+         </div>
+         <div class="dropdown">
+             <div class="from">
+                <p>From</p>
+                <div class="select-container">
+                    <img src="https://flagsapi.com/US/flat/64.png" >
+                    <select name="from">
+                       
+                    </select>
+                </div>
+             </div>
+             <i class="fa-solid fa-right-left"></i>
+             <div class="to">
+                <p>To</p>
+                <div class="select-container">
+                    <img src="https://flagsapi.com/PK/flat/64.png" >
+                    <select name="to">
+                       
+                    </select>
+                </div>
+             </div>
+         </div>
+        <div class="msg"> 1USD = 276PKR </div>
+        <button>Get Exchange Rate</button>
+        </form>
+    </div>
+    <script src="codes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

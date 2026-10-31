@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding:0}
+
+    
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #050b18;
+    color: white;
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+}
+
+/* ===== CURRENCY BACKGROUND ===== */
+.currency-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 24, 0.15),
+            rgba(3, 10, 24, 0.15)
+        ),
+        url("images/img.jpeg") center center / cover no-repeat;
+}
+
+/* ===== DIGITAL WORLD MAP ===== */
+.world-map {
+    position: absolute;
+    inset: 8% 8% 20%;
+
+    background-image: radial-gradient(
+        circle,
+        rgba(210, 169, 105, 0.5) 1px,
+        transparent 1.8px
+    );
+
+    background-size: 9px 9px;
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at 30% 35%,
+            black 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 70% 40%,
+            black 0%,
+            transparent 42%
+        );
+
+    mask-image:
+        radial-gradient(
+            ellipse at 30% 35%,
+            black 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 70% 40%,
+            black 0%,
+            transparent 42%
+        );
+
+    opacity: 0.65;
+}
+
+/* ===== DARK 3D GLOWING CURRENCY SYMBOLS ===== */
+.currency-symbol {
+    position: absolute;
+    bottom: -60px;
+
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    opacity: 1;
+
+    /* Dark, rich color with sharp edges */
+    filter: brightness(6) saturate(4.5)
+            contrast(1);
+
+    /* Deep 3D shadow + individual colored glow */
+    text-shadow:
+        1px 2px 0 rgba(0, 0, 0, 0.9),
+        2px 3px 0 rgba(0, 0, 0, 0.65),
+        0 0 3px currentColor,
+        0 0 8px currentColor,
+        0 0 16px currentColor,
+        0 0 28px currentColor,
+        0 0 40px currentColor;
+
+    opacity: 1;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+
+    animation: floatCurrency linear infinite;
+}
+
+/* ===== SMOOTH FLOATING ANIMATION ===== */
+@keyframes floatCurrency {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.85;
+    }
+
+    90% {
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: 320px;
+    max-width: calc(100% - 50px);
+    margin: 100px auto;
+    padding: 25px;
+
+    background: rgba(7, 18, 35, 0.78);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 190, 80, 0.8);
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 10px rgba(255, 174, 66, 0.5),
+        0 0 25px rgba(255, 174, 66, 0.3),
+        0 0 45px rgba(255, 140, 0, 0.15);
+}
+
+
+form{
+    margin: 2rem 0 1rem 0;
+}
+form select,
+ button,
+input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0.75rem;
+
+}
+form input{
+    border: 1px solid lightgrey;
+    font-size: 1rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.dropdown i{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.select-container img {
+    max-width: 2rem;
+}
+.select-container select{
+    font-size: 1rem;
+    width: auto;
+}
+.select-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+
+}
+.msg{
+    margin: 2rem 0 2rem 0;
+}
+
+button {
+background: linear-gradient(135deg, #FFD700, #F4B942, #D99A20);
+color: #07111F;
+border: 1px solid #FFD700;
+border-radius: 10px;
+padding: 12px 20px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.35),
+    0 0 20px rgba(255, 215, 0, 0.15);
+
+}
+
+/* Cursor button par aane par */
+button:hover {
+background: linear-gradient(135deg, #FFE866, #FFD700, #F4B942);
+color: #07111F;
+
+box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.9),
+    0 0 25px rgba(255, 215, 0, 0.7),
+    0 0 40px rgba(255, 174, 66, 0.45);
+
+transform: translateY(-2px);
+
+}
+
+/* Button click karne par */
+button:active {
+background: linear-gradient(135deg, #FFE866, #FFD700, #F4B942);
+color: #07111F;
+
+box-shadow:
+    0 0 15px rgba(255, 215, 0, 1),
+    0 0 30px rgba(255, 215, 0, 0.75),
+    0 0 45px rgba(255, 174, 66, 0.5);
+
+transform: translateY(0);
+
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.currency-text {
+    color: #FFFFFF;
+}
+
+.converter-text {
+    color: #f5c85b;
+    text-shadow: 0 0 4px rgba(245, 200, 91, 0.25);
+}
+
+/* Premium Exchange Rate Result Box */
+.msg {
+    margin: 10px auto 5px;
+    padding: 6px 10px;
+    width: 75%;
+    min-height: 35px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(15, 15, 20, 0.98),
+        rgba(5, 8, 14, 0.98)
+    );
+
+    border: 1px solid rgba(255, 193, 7, 0.85);
+    border-radius: 18px;
+
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.7;
+
+    box-shadow:
+        0 0 8px rgba(255, 193, 7, 0.15),
+        inset 0 0 12px rgba(255, 193, 7, 0.04);
+
+    transition: all 0.3s ease;
+}
+
+.msg:hover {
+    border-color: #ffd45c;
+    box-shadow:
+        0 0 14px rgba(255, 193, 7, 0.22),
+        inset 0 0 12px rgba(255, 193, 7, 0.05);
+}
+
+.golden-line {
+    position: absolute;
+    width: 150%;
+    height: 180px;
+    left: -25%;
+    border-top: 2px solid rgba(255, 193, 7, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 -2px 10px rgba(255, 193, 7, 0.3);
+    animation: goldenLineMove 1.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.line1 { top: 10%; transform: rotate(-12deg); }
+.line2 { top: 25%; transform: rotate(10deg); animation-delay: -2s; }
+.line3 { top: 40%; transform: rotate(-8deg); animation-delay: -4s; }
+.line4 { top: 55%; transform: rotate(12deg); animation-delay: -1s; }
+.line5 { top: 70%; transform: rotate(-10deg); animation-delay: -3s; }
+.line6 { top: 85%; transform: rotate(7deg); animation-delay: -5s; }
+
+@keyframes goldenLineMove {
+    from {
+        margin-left: -2%;
+        opacity: 0.3;
+    }
+    to {
+        margin-left: 2%;
+        opacity: 1;
+    }
+}
+
